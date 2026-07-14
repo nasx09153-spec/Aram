@@ -91,7 +91,7 @@ function Edit_Coupon(hex_values, name, slotIdx, totalSelected)
     if not isCouponSearched then
         gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🔍 گەڕان بۆ خانەی کۆبۆنەکان...")
-        gg.searchNumber("65537~65542;1970225964;29::457", 4, )
+        gg.searchNumber("65537~65542;1970225964;29::457",4)
         gg.refineNumber("29", 4)
         
         local count = gg.getResultCount()
