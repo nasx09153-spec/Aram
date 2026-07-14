@@ -3984,14 +3984,14 @@ end
 -- ==========================================
 function HackGoldPass()
 
-gg.toast("❤️لا تنسى الصلاة على النبي❤️")
+gg.toast("❤️")
 gg.clearResults()
 gg.setVisible(false)
 gg.searchNumber("1937011470;1701998435", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
 gg.refineNumber("1937011470", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
 local results = gg.getResults(gg.getResultCount())
 if #results == 0 then
-gg.alert("❌ كود فتح التذكرة الذهبيه لا يعمل ❌\n\n📸 تحدث مع مطور الاسكربت وأرسل صوره📸 ")
+gg.alert("❌")
 return
 end
 local success = false
@@ -4028,10 +4028,10 @@ end
 end
 end
 if success then
-gg.alert("🤡مبروك فتح التذكره الذهبيه🤡")
-gg.toast("🏴‍☠️🔥𝙈𝘼𝙃𝙈𝙊𝙐𝘿𝙃𝙀𝙍𝙊🔥🏴‍☠️")
+gg.alert("😍")
+gg.toast("🤴")
 else
-gg.alert("❌ التحقق لا يعمل في كود التذكره الذهبيه  ❌\n\n📸 تحدث مع مطور الاسكربت وأرسل صوره📸 ")
+gg.alert("❌")
 end
 gg.clearList()
  gg.clearResults()
