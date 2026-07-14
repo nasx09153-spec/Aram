@@ -3267,31 +3267,27 @@ function HackLogic()
     }, {900000, 25000, 30000000}, {"number", "number", "number"})
 
     if input ~= nil then
-        gg.clearResults()
-        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
-        
-        -- گەڕان بۆ تەڵەبەکە
-        gg.searchNumber("1703939;0;0;0;2;0::45", gg.TYPE_DWORD)
-        local results = gg.getResults(1)
+      -- بەشی گەڕان
+gg.clearResults()
+gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+gg.searchNumber("1703939;0;0;0;2;0::45", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+local results = gg.getResults(1)
 
-        if #results > 0 then
-            local base = results[1].address
-            local modifications = {
-                -- گۆڕینی نرخەکان
-                {address = base + 0x30, value = 0, flags = gg.TYPE_DWORD},
-                {address = base + 0x34, value = input[1], flags = gg.TYPE_DWORD},
-                {address = base + 0x38, value = 0, flags = gg.TYPE_DWORD},
-                {address = base + 0x3C, value = input[2], flags = gg.TYPE_DWORD},
-                {address = base + 0x50, value = 0, flags = gg.TYPE_DWORD},
-                {address = base + 0x54, value = input[3], flags = gg.TYPE_DWORD}
-            }
-
-            gg.setValues(modifications)
-    gg.toast("💮 🅰︎🆁︎🅰︎🅼︎🅺︎??︎??︎🅳︎🆃︎🅾︎🆆︎🅽︎💮")
-    gg.clearResults()
-    MainMenu()
+-- بەشی دەستکاریکردن
+if #results > 0 then
+    local base = results[1].address
+    local modifications = {
+        {address = base + 0x30, value = 0, flags = gg.TYPE_DWORD},
+        {address = base + 0x34, value = input[1], flags = gg.TYPE_DWORD},
+        {address = base + 0x38, value = 0, flags = gg.TYPE_DWORD},
+        {address = base + 0x3C, value = input[2], flags = gg.TYPE_DWORD},
+        {address = base + 0x50, value = 0, flags = gg.TYPE_DWORD},
+        {address = base + 0x54, value = input[3], flags = gg.TYPE_DWORD}
+    }
+    gg.setValues(modifications)
+    gg.toast("✅ بە سەرکەوتوویی گۆڕدرا")
 else
-    gg.alert("❌ نەدۆزرایەوە! دڵنیابە خانەی (٢) کراوەیە.")
+    gg.alert("❌ نەدۆزرایەوە، دڵنیابە لە یارییەکە")
     MainMenu()
        end
     end
