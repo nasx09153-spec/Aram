@@ -3984,45 +3984,58 @@ end
 -- ==========================================
 function HackGoldPass()
 
-    gg.clearResults()
-    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC)
-    
-    gg.searchNumber("1937011470;1701998435", gg.TYPE_DWORD)
-    gg.refineNumber("1937011470", gg.TYPE_DWORD)
-    
-    local results = gg.getResults(100)
-    if #results > 0 then
-        local all_edits = {}
-        local all_freeze = {}
-        
-        for i, v in ipairs(results) do
-            local address_hex = string.format("%X", v.address)
-            
-            if address_hex:sub(-2) == "D0" then
-                local base = v.address
-                
-                table.insert(all_edits, {address = base + 0xE8, value = 0, flags = gg.TYPE_DWORD})
-                table.insert(all_edits, {address = base + 0xEC, value = 8000, flags = gg.TYPE_DWORD})
-                table.insert(all_edits, {address = base + 0xF8, value = 1, flags = gg.TYPE_DWORD})
-                
-                table.insert(all_freeze, {address = base + 0xE8, value = 0, flags = gg.TYPE_DWORD, freeze = true})
-                table.insert(all_freeze, {address = base + 0xEC, value = 8000, flags = gg.TYPE_DWORD, freeze = true})
-                table.insert(all_freeze, {address = base + 0xF8, value = 1, flags = gg.TYPE_DWORD, freeze = true})
-            end
-        end
-        
-        if #all_edits > 0 then
-            gg.setValues(all_edits)
-            gg.addListItems(all_freeze)
-            gg.toast("گۆڵدپاس بەسەرکەوتووی کرایەوە جەرگە 🙋‍♂️")
-            gg.clearResults()
-        else
-            gg.toast("وەک ئاو خواردنەوە وایە😎")
-        end
-    else
-        gg.alert("❌ هیچ ئەنجامێک نەدۆزرایەوە بۆ ڕیفایین کردن!")
-    end
+gg.toast("❤️لا تنسى الصلاة على النبي❤️")
+gg.clearResults()
+gg.setVisible(false)
+gg.searchNumber("1937011470;1701998435", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("1937011470", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+local results = gg.getResults(gg.getResultCount())
+if #results == 0 then
+gg.alert("❌ كود فتح التذكرة الذهبيه لا يعمل ❌\n\n📸 تحدث مع مطور الاسكربت وأرسل صوره📸 ")
+return
 end
+local success = false
+for i, v in ipairs(results) do
+local offset232 = gg.getValues({{address = v.address + 232, flags = gg.TYPE_DWORD}})[1]
+local offset236 = gg.getValues({{address = v.address + 236, flags = gg.TYPE_DWORD}})[1]
+local offset240 = gg.getValues({{address = v.address + 240, flags = gg.TYPE_DWORD}})[1]
+local offset244 = gg.getValues({{address = v.address + 244, flags = gg.TYPE_DWORD}})[1]
+
+if offset232.value and offset236.value and offset240.value and offset244.value then
+local str232 = tostring(math.abs(offset232.value))
+local str236 = tostring(math.abs(offset236.value))
+local str240 = tostring(math.abs(offset240.value))
+local str244 = tostring(math.abs(offset244.value))
+
+local length232 = #str232
+local length236 = #str236
+local length240 = #str240
+local length244 = #str244
+
+local validLength232 = (length232 == 8 or length232 == 9 or length232 == 10)
+local validLength236 = (length236 == 8 or length236 == 9 or length236 == 10)
+local validLength240 = (length240 == 8 or length240 == 9 or length240 == 10)
+local validLength244 = (length244 == 8 or length244 == 9 or length244 == 10)
+
+local isMatchFirstPair = str232:sub(1, 4) == str236:sub(1, 4)
+local isMatchSecondPair = str240:sub(1, 4) == str244:sub(1, 4)
+if validLength232 and validLength236 and validLength240 and validLength244 and isMatchFirstPair and isMatchSecondPair then  
+          
+gg.setValues({{address = v.address + 232, flags = gg.TYPE_QWORD, value = 1000},
+{address = v.address + 248, flags = gg.TYPE_DWORD, value = 1}})
+success = true
+end
+end
+end
+if success then
+gg.alert("🤡مبروك فتح التذكره الذهبيه🤡")
+gg.toast("🏴‍☠️🔥𝙈𝘼𝙃𝙈𝙊𝙐𝘿𝙃𝙀𝙍𝙊🔥🏴‍☠️")
+else
+gg.alert("❌ التحقق لا يعمل في كود التذكره الذهبيه  ❌\n\n📸 تحدث مع مطور الاسكربت وأرسل صوره📸 ")
+end
+gg.clearList()
+ gg.clearResults()
+ end
 
 ---------------------------------------------------------
 -- 🌾 هاکی گەنم و مستوا لێرەوە دەست پێ دەکات 🌾 --
