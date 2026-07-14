@@ -89,9 +89,9 @@ local couponResults = {}
 -- فانکشنی سەرەکی بۆ دەستکاری کردنی کۆبۆنەکان
 function Edit_Coupon(hex_values, name, slotIdx, totalSelected)
     if not isCouponSearched then
-        gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🔍 گەڕان بۆ خانەی کۆبۆنەکان...")
-        gg.searchNumber("65537~65542;1970225964;29::457", 4)
+        gg.searchNumber("65537~65542;1970225964;29::457", 4, )
         gg.refineNumber("29", 4)
         
         local count = gg.getResultCount()
@@ -213,9 +213,9 @@ function Final_Emoji_Collector()
         "00003474h", "00333270h"
     }
 
-    gg.clearResults()
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
     -- گەڕان بۆ کۆدی بنچینەیی
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     
     local results = gg.getResults(1)
@@ -298,9 +298,9 @@ function HackItems()
 
     -- گەڕان تەنها بۆ یەکەم جار بۆ ئەم بەشە
     if not isHackItemsSearched then
-        gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🔍 گەڕان بۆ خاڵەکان...")
-        gg.searchNumber("65537~65542;1970225964;29", 4)
+        gg.searchNumber("65537~65542;1970225964;29::457", 4)
         gg.refineNumber("29", 4)
         
         local count = gg.getResultCount()
@@ -400,9 +400,9 @@ function qalbAltuny()
     if not selected then return qalbAltuny() end
 
     if not isSearched then
-        gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🔍 خەریکی گەڕانە...")
-        gg.searchNumber("65537~65542;1970225964;29", 4)
+        gg.searchNumber("65537~65542;1970225964;29::457", 4)
         gg.refineNumber("29", 4)
         isSearched = true
     end
@@ -501,9 +501,9 @@ function menuTools()
 
     -- لێرەدا، ئەگەر تازە چوویتە ناو بەشەکە، گەڕانی کۆن بەتەواوی پاک دەکەینەوە
     if not isNailSearched then
-        gg.clearResults() -- ئەمە کلیلی چارەسەرەکەیە
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🔍 گەڕانی نوێ بۆ کەرەستەکان...")
-        gg.searchNumber("65537~65542;1970225964;29", 4)
+        gg.searchNumber("65537~65542;1970225964;29::457", 4)
         gg.refineNumber("29", 4)
         
         local count = gg.getResultCount()
@@ -610,9 +610,9 @@ function kandi()
 
     -- گەڕان تەنها جارێک دەکرێت تا دوگمەی گەڕانەوە دانەنێیت
     if not isKandiSearched then
-        gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🌸تکایە چاوەڕوان بکە🌸")
-        gg.searchNumber("65537~65542;1970225964;29", 4)
+        gg.searchNumber("65537~65542;1970225964;29::457", 4)
         gg.refineNumber("29", 4)
         
         local count = gg.getResultCount()
@@ -723,9 +723,9 @@ function menuYaqut()
 
     -- گەڕان تەنها یەکجار تا کاتی گەڕانەوە
     if not isYaqutSearched then
-        gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🌺 گەڕان دەستی پێکرد 🌺")
-        gg.searchNumber("65537~65542;1970225964;29", 4)
+        gg.searchNumber("65537~65542;1970225964;29::457", 4)
         gg.refineNumber("29", 4)
         
         local count = gg.getResultCount()
@@ -830,9 +830,9 @@ function menuMshar()
 
     -- گەڕان تەنها یەکجار
     if not isExpansionSearched then
-        gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🌼 گەڕان دەستی پێکرد 🌼")
-        gg.searchNumber("65537~65542;1970225964;29", 4)
+        gg.searchNumber("65537~65542;1970225964;29::457", 4)
         gg.refineNumber("29", 4)
         
         local count = gg.getResultCount()
@@ -892,7 +892,7 @@ end
 
 
 function Final_Auto_Collector()
-    gg.clearResults()
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
     -- لیستی هەموو کۆدەکان
     local all_avatars = {
         3748147, 3291442, 3553329, 3289393, 3487793, 3618865, 3551281, 3355697, 
@@ -913,7 +913,7 @@ function Final_Auto_Collector()
     }
 
     -- گەڕان بۆ خانەی ٢٩
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     
     local results = gg.getResults(1)
@@ -1014,9 +1014,9 @@ function YellowMenu()
 
     -- گەڕان تەنها یەکجار
     if not isYellowSearched then
-        gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🌹خــەریکی گەڕانە 🌹")
-        gg.searchNumber("65537~65542;1970225964;29", 4)
+        gg.searchNumber("65537~65542;1970225964;29::457", 4)
         gg.refineNumber("29", 4)
         
         local count = gg.getResultCount()
@@ -1154,8 +1154,8 @@ local ice_collection = {
 
 function Ice_InitialSetup()
     gg.toast("🦜 گەڕان بەردەوامە چاوەڕوان بکە 🦜")
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local r = gg.getResults(1)
     if #r == 0 then 
@@ -1249,8 +1249,8 @@ local selectedHeartIndex = 0
 
 -- ٢. فەنکشنی سەرەکی بە شێوازی مینۆ و قفلکراو
 function Run_Hearts_Bears()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -1383,8 +1383,8 @@ local selectedDecoIndex = 0
 
 -- ٢. فەنکشنی جوانکاری بە شێوازی مینۆ و قفلکراو
 function Run_Decoration()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -1486,8 +1486,8 @@ local selectedWaterIndex = 0
 
 -- ٢. فەنکشنی جوانکارییەکان بە شێوازی مینۆ و قفلکراو
 function Run_Water_Decoration()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -1572,8 +1572,8 @@ local selectedFountainIndex = 0
 
 -- ٢. فەنکشنی نافوورەکان بە شێوازی مینۆ و قفلکراو
 function Run_Fountain()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -1672,8 +1672,8 @@ local selectedWitchIndex = 0
 
 -- ٢. فەنکشنی ماڵی ساحیرەکان بە شێوازی مینۆ و قفلکراو
 function Run_Witch_Houses()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -1758,8 +1758,8 @@ local selectedTreeIndex = 0
 
 -- ٢. فەنکشنی دارەکان بە شێوازی مێنۆ و قفلکراو
 function Run_Trees()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -1834,8 +1834,8 @@ local selectedRabbitIndex = 0
 
 -- ٢. فەنکشنی کەروێشکەکان بە شێوازی مێنۆ و قفلکراو
 function Run_Rabbit_Houses()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -1924,8 +1924,8 @@ local selectedFenceIndex = 0
 
 -- ٢. فەنکشنی سیاجەکان بە شێوازی مێنۆ و قفلکراو
 function Run_Fences()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -2034,8 +2034,8 @@ end
 
 -- ٣. فەنکشنی مریشکەکان بە مێنۆی هەڵبژاردن (Radio Style)
 function Run_Chickens()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local r = gg.getResults(1)
     
@@ -2123,8 +2123,8 @@ local selectedCowIndex = 0
 
 -- ٢. فەنکشنی مانگاکان بە مێنۆی هەڵبژاردنی بازنەیی
 function Run_Cows()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -2202,8 +2202,8 @@ local selectedSheepIndex = 0
 
 -- ٢. فەنکشنی مەڕەکان بە مێنۆی هەڵبژاردن
 function Run_Sheeps()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -2269,8 +2269,8 @@ local selectedPigIndex = 0
 
 -- ٢. فەنکشنی بەرازەکان بە مێنۆی هەڵبژاردن
 function Run_Pigs()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -2381,8 +2381,8 @@ end
 
 -- ٣. فەنکشنی شەمەندەفەرەکان
 function Run_Train_Logic()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -2451,8 +2451,8 @@ local selectedStationIndex = 0
 
 -- ٢. فەنکشنی وێستگەی شەمەندەفەر بە مێنۆی هەڵبژاردن
 function Run_Train_Station()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -2524,8 +2524,8 @@ local selectedHeliIndex = 0
 
 -- ٢. فەنکشنی هەلیکۆپتەر بە مێنۆی هەڵبژاردن
 function Run_Helicopter()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -2598,8 +2598,8 @@ local selectedAirIndex = 0
 
 -- ٢. فەنکشنی تەیارەکان بە مێنۆی هەڵبژاردن
 function Run_Air_Mixed()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -2674,8 +2674,8 @@ local selectedShipIndex = 0
 
 -- ٢. فەنکشنی پاپۆڕ و لەنگەر بە مێنۆی هەڵبژاردن
 function Run_Ship_Island_Mixed()
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", 4)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", 4)
     gg.refineNumber("29", 4)
     local results = gg.getResults(1)
     
@@ -2779,9 +2779,9 @@ function StoneMenu()
 
     -- گەڕان تەنها بۆ یەکەم جار
     if not isStoneSearched then
-        gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🔍 خەریکی گەڕانە بۆ کانە بەردەکان...")
-        gg.searchNumber("65537~65542;1970225964;29", 4)
+        gg.searchNumber("65537~65542;1970225964;29::457", 4)
         gg.refineNumber("29", 4)
         
         local count = gg.getResultCount()
@@ -2844,9 +2844,9 @@ function NaznawakanMenu()
 
     -- مەرج بۆ ئەوەی گەڕان تەنها یەکجار ئەنجام بدرێت
     if not searchDone then
-        gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast(" چـــاوەڕوان بکە تا گەڕان تەواو دەبێت")
-        gg.searchNumber("65537~65542;1970225964;29", gg.TYPE_DWORD)
+        gg.searchNumber("65537~65542;1970225964;29::457", gg.TYPE_DWORD)
         gg.refineNumber("29", gg.TYPE_DWORD)
         searchDone = true 
     end
@@ -2968,7 +2968,7 @@ local SMART_PARTS = {
 }
 function Slemani_InitialSetup(mode)
     gg.toast("💮 🅰︎🆁︎🅰︎🅼︎🅺︎🆄︎🆁︎🅳︎🆃︎🅾︎🆆︎🅽︎💮")
-    gg.clearResults()
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
     gg.searchNumber("1599099688;1936682818;33;24", gg.TYPE_DWORD)
     gg.refineNumber("33", gg.TYPE_DWORD)
     local res1 = gg.getResults(1)
@@ -2979,8 +2979,8 @@ function Slemani_InitialSetup(mode)
         Slemani_SavedCopied[i+1] = v[1].value
     end
 
-    gg.clearResults()
-    gg.searchNumber("65537~65542;1970225964;29", gg.TYPE_DWORD)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
+    gg.searchNumber("65537~65542;1970225964;29::457", gg.TYPE_DWORD)
     gg.refineNumber("29", gg.TYPE_DWORD)
     local res2 = gg.getResults(1)
     if #res2 == 0 then gg.alert("🚫 دڵنیابەوە یاریەکەت بەسراوەتەوە بە جێم"); return false end
@@ -3140,9 +3140,9 @@ end
 
 function Aram_Logokan()
     -- ١. پاککردنەوەی میمۆری لە کاتی چوونە ناو ئەم بەشە
-    gg.clearResults()
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
     gg.toast("⏳ خەریکی گەڕانە، تکایە چاوەڕێبە...")
-    gg.searchNumber("65537~65542;1970225964;29", gg.TYPE_DWORD)
+    gg.searchNumber("65537~65542;1970225964;29::457", gg.TYPE_DWORD)
     gg.refineNumber("29", gg.TYPE_DWORD)
 
     local r = gg.getResults(100)
@@ -3735,7 +3735,7 @@ function saveMonitoringValues()
     local results = gg.getResults(500)
     if #results == 0 then
         -- ئەگەر گەڕانی یەکەم شکستی هێنا، تەنها بۆ 18000 دەگەڕێین
-        gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.searchNumber("18000", gg.TYPE_DWORD)
         results = gg.getResults(500)
     end
@@ -4034,10 +4034,10 @@ end
 
 function WheatLevelXP()
     gg.clearResults()
-    gg.setRanges(gg.REGION_C_ALLOC)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
     
     -- گەڕان بۆ کۆدەکانی گەنم
-    gg.searchNumber("1701147414;2002744164;1123024896:512", gg.TYPE_DWORD)
+    gg.searchNumber("1701147414;2002744164;1123024896", gg.TYPE_DWORD)
     
     -- پشکنین پێش ڕیفاینکردن
     if gg.getResultsCount() == 0 then
@@ -4094,7 +4094,7 @@ function Nardni_Kart()
     -- هەنگاوی یەکەم: گەڕانی 86400
     -------------------------------------------------------
     gg.toast("تکایە چاوەڕوان بکە با گەڕان تەواوبێت⏳")
-    gg.searchNumber("86400;50;1;1;1", gg.TYPE_DWORD)
+    gg.searchNumber("86400;50;1;1;1::17", gg.TYPE_DWORD)
     gg.refineNumber("86400", gg.TYPE_DWORD)
 
     local count1 = gg.getResultCount()
@@ -4228,6 +4228,7 @@ end
 -- فەنکشنی تایبەت بە زیادکردنی کارت (Aram & Mahmoud)
 function CardHack()
     gg.clearResults()
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
     gg.toast("⏳ چاوەڕێ بکە... گەڕان دەستی پێکرد")
 
     -- 1. گەڕانی سەرەتا بۆ کۆدەکان
@@ -4336,8 +4337,9 @@ function CardsSystemAram()
     -- گەڕان تەنها بۆ یەکەم جار
     if not isSearchedCards then
         gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🔍 خەریکی گەڕانە بۆ کارتەکان...")
-        gg.searchNumber("65537~65542;1970225964;29", 4)
+        gg.searchNumber("65537~65542;1970225964;29::457", 4)
         gg.refineNumber("29", 4)
         
         local count = gg.getResultCount()
@@ -4398,6 +4400,7 @@ end
 function OpenYellowHats()
     gg.alert("تکایە دڵنیابەوە لە کردنەوەی پەنجەرەی کڵاوە زەردەکان")
     gg.clearResults()
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
     gg.searchNumber("1768846701;31092;2", gg.TYPE_DWORD)
     
     local count = gg.getResultCount()
@@ -4429,7 +4432,7 @@ function Koga()
     -- ١. دڵنیابوونەوە لە هەبوونی ناونیشانەکان
     if saved_copied == nil or saved_base2 == nil then
         gg.clearResults()
-        gg.setRanges(gg.REGION_C_ALLOC)
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         
         -- گەڕانی یەکەم
         gg.toast("گەڕانی یەکەم... ❇️")
@@ -4450,7 +4453,7 @@ function Koga()
 
         -- گەڕانی دووەم
         gg.clearResults()
-        gg.searchNumber("65537~65542;1970225964;29", gg.TYPE_DWORD)
+        gg.searchNumber("65537~65542;1970225964;29::457", gg.TYPE_DWORD)
         gg.refineNumber("29", gg.TYPE_DWORD)
         local r2 = gg.getResults(1)
         if #r2 == 0 then gg.alert("کۆدی دووەم نەدۆزرایەوە") return end
@@ -4495,7 +4498,7 @@ function Binakan()
     -- ١. ئەگەر پێشتر نەگەڕابووین، با بگەڕێین بۆ دۆزینەوەی ئەدرەسەکان
     if saved_copied == nil or saved_base2 == nil then
         gg.clearResults()
-        gg.setRanges(gg.REGION_C_ALLOC)
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
 
         -- گەڕان بۆ کۆدی بنچینە (24)
         gg.toast("گەڕان بۆ کۆدی بنچینە... ❇️")
@@ -4520,8 +4523,9 @@ function Binakan()
 
         -- گەڕان بۆ بەهای ئامانج (29)
         gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("گەڕان بۆ ٢٩...")
-        gg.searchNumber("65537~65542;1970225964;29", gg.TYPE_DWORD)
+        gg.searchNumber("65537~65542;1970225964;29::457", gg.TYPE_DWORD)
         gg.refineNumber("29", gg.TYPE_DWORD)
 
         local r2 = gg.getResults(1)
@@ -4564,11 +4568,11 @@ end
 function Agriculture()
     if saved_base2 == nil then
         gg.clearResults()
-        gg.setRanges(gg.REGION_C_ALLOC)
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("گەڕان بۆ کۆدی کوشتوکاڵ... 🌱")
         
         -- بە هەمان شێوەی تەیارە دەگەڕێین بۆ ٢٩
-        gg.searchNumber("65537~65542;1970225964;29", gg.TYPE_DWORD)
+        gg.searchNumber("65537~65542;1970225964;29::457", gg.TYPE_DWORD)
         gg.refineNumber("29", gg.TYPE_DWORD)
 
         local results = gg.getResults(1)
@@ -4613,11 +4617,11 @@ end
 function tayara()
 
     gg.clearResults()
-    gg.setRanges(gg.REGION_C_ALLOC)
+    gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
     gg.toast("گەڕان بۆ کۆدی تەیارە... 🔍")
 
     -- ١. گەڕان بۆ ٢٩ و گروپەکەی
-    gg.searchNumber("65537~65542;1970225964;29", gg.TYPE_DWORD)
+    gg.searchNumber("65537~65542;1970225964;29::457", gg.TYPE_DWORD)
     gg.refineNumber("29", gg.TYPE_DWORD)
 
     local results = gg.getResults(1)
@@ -4712,8 +4716,9 @@ function MenuZyadkrdn()
     if menu[1] or menu[2] then
         if not isZyadSearched then
             gg.clearResults()
+            gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
             gg.toast("⏳ گەڕان دەستی پێکرد ")
-            gg.searchNumber("65537~65542;1970225964;29", 4)
+            gg.searchNumber("65537~65542;1970225964;29::457", 4)
             gg.refineNumber("29", 4)
             
             local count = gg.getResultCount()
@@ -4766,6 +4771,7 @@ function MenuZyadkrdn()
     -- بەشی نیاردەرتاڵ
     if menu[3] then
         gg.clearResults()
+        gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
         gg.toast("🔍 گەڕان بۆ نیاردەرتاڵ...")
         gg.searchNumber("1900000x4", 4)
         local count = gg.getResultCount()
@@ -4811,7 +4817,7 @@ end
 function start_auto_hack()
   gg.toast("🦋🄳🄸🄳🄰🅁🅆🄰🄷🄰🄱🦋")
   gg.clearResults()
-  
+  gg.setRanges(gg.REGION_ANONYMOUS | gg.REGION_C_ALLOC | gg.REGION_CODE_APP)
   -- ١. گەڕان بە دوای کۆدەکەدا
   gg.searchNumber("65538;1952533772::89", gg.TYPE_DWORD)
   
